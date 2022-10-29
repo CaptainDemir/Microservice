@@ -146,7 +146,7 @@ resource "aws_instance" "kube-master" {
         Project = "tera-kube-ans"
         Role = "master"
         Id = "1"
-        environment = "dev"
+        environment = "qa"
     }
 }
 
@@ -164,7 +164,7 @@ resource "aws_instance" "worker-1" {
         Project = "tera-kube-ans"
         Role = "worker"
         Id = "1"
-        environment = "dev"
+        environment = "qa"
     }
 }
 
@@ -182,7 +182,7 @@ resource "aws_instance" "worker-2" {
         Project = "tera-kube-ans"
         Role = "worker"
         Id = "2"
-        environment = "dev"
+        environment = "qa"
     }
 }
 
