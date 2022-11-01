@@ -78,7 +78,7 @@ pipeline {
                 sh "helm package k8s/webservices_chart"
                 sh "helm s3 push --force webservices_chart-${BUILD_NUMBER}.tgz stable-web "
                 sh "helm repo update"
-                sh "AWS_REGION=$AWS_REGION helm upgrade --install petclinic-app-release stable-web /webservices_chart --version ${BUILD_NUMBER} --namespace petclinic-prod-ns --kubeconfig k8s/config"
+                sh "AWS_REGION=$AWS_REGION helm upgrade --install petclinic-app-release stable-web/webservices_chart --version ${BUILD_NUMBER} --namespace petclinic-prod-ns --kubeconfig k8s/config"
             }
         }
     }
